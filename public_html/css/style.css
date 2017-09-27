@@ -289,6 +289,11 @@ img.btn-pill {
   text-transform: uppercase;
 }
 
+.photo-credit {
+    float: right;
+    padding-right: 5px;
+}
+
 .dark {
   background-color: #333333;
 }
@@ -1769,24 +1774,6 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 /* End Navigations */
 /* Banners */
 #header-banner {
-  background-color: #ebebeb;
-}
-
-#header-banner.demo-1 {
-  background: url("../images/banner-bg.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: #cccccc;
-}
-
-#header-banner.demo-2 {
-  background: url("../images/banner-bg.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: #cccccc;
-}
-
-#header-banner.demo-4 {
   background: url("../images/banner-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -1837,6 +1824,24 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 
 .banner-info p {
   margin-bottom: 0;
+}
+
+.banner-summary {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.banner-summary p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-style: normal;
+    word-break: normal;
+    word-wrap: break-word;
+    letter-spacing: -.003em;
+    line-height: 1.8;
 }
 
 /* End Banners */
