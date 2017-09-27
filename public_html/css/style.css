@@ -2,7 +2,7 @@
 body {
   color: #666666;
   background: #fefefe;
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -17,9 +17,8 @@ html, body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: #111111;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   margin-top: 0;
 }
 
@@ -74,7 +73,7 @@ a:hover, a:active, a:focus {
 }
 
 p {
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -289,9 +288,25 @@ img.btn-pill {
   text-transform: uppercase;
 }
 
+.section-title {
+    padding: 20px 0;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    font-size: 3em;
+}
+
 .photo-credit {
     float: right;
     padding-right: 5px;
+    font-size: 85%;
+    margin-bottom: 5px;
+}
+
+.spacer {
+    background-color: #c39d6d;
+    width: 100px;
+    height: 2px;
+    margin: auto;
 }
 
 .dark {
@@ -1788,24 +1803,10 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
   padding: 80px 0;
 }
 
-.banner-border {
-  width: 420px;
-  border: 2px solid rgba(255, 255, 255, 0.75);
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.banner-border .banner-info {
-  background: rgba(255, 255, 255, 0.75);
-  width: 396px;
-  margin: 0;
-  padding: 50px 0;
-}
-
 .banner-info {
-  background: rgba(255, 255, 255, 0.75);
+  /* background: rgba(255, 255, 255, 0.75);
   width: 400px;
-  margin: 0 auto;
+  margin: 0 auto; */
   padding: 50px 0;
 }
 
@@ -1818,12 +1819,27 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 }
 
 .banner-info h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 42pt;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.banner-info h1 #lightning-bolt {
+    font-size: 50%;
+    color: #df2048;
 }
 
 .banner-info p {
-  margin-bottom: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14pt;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
 }
 
 .banner-summary {
@@ -1849,7 +1865,8 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 /* Content */
 /* Portfolio */
 #portfolio {
-  padding-bottom: 50px;
+    padding-top: 75px;
+    padding-bottom: 50px;
 }
 
 #portfolio.full-screen {
@@ -3593,29 +3610,14 @@ footer .social a {
     right: 40%;
   }
 }
+@media only screen and (max-width: 515px) {
+    #lightning-bolt {
+        display: none;
+    }
+}
 @media only screen and (max-width: 480px) {
   .banner-content {
     padding: 80px 0;
-  }
-
-  .banner-border {
-    width: 90%;
-    padding: 10px;
-  }
-
-  .banner-border .banner-info {
-    width: 100%;
-    margin: 0 auto;
-    padding: 50px;
-  }
-
-  .banner-info {
-    width: 90%;
-    padding: 50px;
-  }
-
-  .banner-info h1 {
-    font-size: 20px;
   }
 
   .project-hover-tools {
