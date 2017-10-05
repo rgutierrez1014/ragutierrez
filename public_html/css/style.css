@@ -2376,6 +2376,10 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
   padding: 15px;
 }
 
+p.skill-list {
+    line-height: 2.1;
+}
+
 /* End Single Project */
 /* About Pages */
 .section-w-image {
