@@ -305,10 +305,15 @@ img.btn-pill {
     font-size: 3em;
 }
 
+.section-heading {
+    font-size: 26px;
+    margin-bottom: 9px;
+}
+
 .section-subheading {
     font-size: 20px;
     margin-top: 36px;
-    margin-bottom: 12px;
+    margin-bottom: 9px;
 }
 
 .photo-credit {
@@ -2083,6 +2088,7 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
     line-height: 1.8;
     font-size: 14pt;
     color: rgba(0, 0, 0, 0.85);
+    margin-bottom: 20px;
 }
 
 .project-details {
@@ -2375,6 +2381,7 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 
 #project-slider {
   margin-bottom: 30px;
+  border: 1px solid #ccc;
 }
 
 .carousel-control.left, .carousel-control.right {
