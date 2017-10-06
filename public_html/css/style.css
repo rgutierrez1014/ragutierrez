@@ -2,11 +2,16 @@
 body {
   color: #666666;
   background: #fefefe;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont,
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+  word-break: normal;
 }
 
 html, body {
@@ -17,9 +22,14 @@ html, body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: #111111;
-  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   margin-top: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont,
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  letter-spacing: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: auto;
 }
 
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
@@ -295,6 +305,12 @@ img.btn-pill {
     font-size: 3em;
 }
 
+.section-subheading {
+    font-size: 20px;
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
 .photo-credit {
     float: right;
     padding-right: 5px;
@@ -507,6 +523,8 @@ input:focus {
 
 /* Buttons */
 .btn {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont,
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 0.05em;
@@ -1465,6 +1483,8 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
   border: 0;
   border-radius: 0 !important;
   margin-bottom: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont,
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .navbar-fixed-top {
@@ -1918,6 +1938,8 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 .portfolio-filter {
   margin-top: 40px;
   margin-bottom: 10px;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont,
+  "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .portfolio-filter.list-inline li {
@@ -2049,6 +2071,20 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
   background-color: #ad8b60;
 }
 
+.project-description p {
+    font-family: "Halant", Georgia, Cambria,
+    "Times New Roman", Times, serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-style: normal;
+    word-break: normal;
+    word-wrap: break-word;
+    letter-spacing: -.003em;
+    line-height: 1.8;
+    font-size: 14pt;
+    color: rgba(0, 0, 0, 0.85);
+}
+
 .project-details {
   position: absolute;
   z-index: 2;
@@ -2081,15 +2117,15 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 
 .project-title {
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.1em;
   margin-bottom: 3px;
 }
 
 .project .skill {
   color: #f8f8f8;
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.1em;
 }
 

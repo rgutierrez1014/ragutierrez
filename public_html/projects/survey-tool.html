@@ -20,7 +20,7 @@
         <link href="../css/style.css" rel="stylesheet">
         <link href="../css/animate.css" rel="stylesheet">
         <!-- fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Oswald:400,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Oswald:400,500|Halant:400" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../css/linear-icons.css">
 
@@ -87,7 +87,8 @@
             <section id="project">
                 <div class="row">
                     <!-- project content area -->
-                    <div class="col-sm-7">
+
+                    <div class="col-sm-12">
                         <div class="project-content-area">
                             <!-- <img src="../images/projects/project-img.jpg" alt="" class="space-bottom-30"> -->
                             <!-- slider -->
@@ -118,54 +119,61 @@
                               </a>
                             </div>
                             <!-- / slider -->
-                            <h4>PROJECT DESCRIPTION</h4>
-                            <p>Etiam lacinia nisi vitae nulla pellentesque aliquet. Curabitur a faucibus felis, ut aliquam purus. Mauris malesuada consequat velit eget pellentesque. Duis dui nunc, aliquet eget pulvinar sit amet, facilisis lacinia massa. Nunc facilisis neque sapien, vel viverra augue convallis nec. Pellentesque aliquet ante ante, sed ultricies diam efficitur non. Duis elementum porttitor fermentum. Class aptent taciti sociosqu ad litora.</p>
-                            <p>Fusce accumsan nisi non elit dictum, in malesuada quam ullamcorper. Proin libero ipsum, dictum ac lacus a, rhoncus tristique erat. Nulla vitae dignissim orci.</p>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="section-description light">
+                                        <h4>Project Info</h4>
+                                        <p>An in-house custom survey application. Built with the Google App Engine framework, written in Python.</p>
+                                        <br>
+
+                                        <p class="skill-list"><strong>Backend:&nbsp;</strong>
+                                            <span class="bg-primary">Google App Engine</span>
+                                            <span class="bg-primary">python</span>
+                                            <span class="bg-primary">webapp2</span>
+                                            <span class="bg-primary">jinja2</span>
+                                            <span class="bg-primary">Google Cloud SQL</span>
+                                        </p>
+
+                                        <p class="skill-list"><strong>Frontend:&nbsp;</strong>
+                                            <span class="bg-success">Bootstrap</span>
+                                            <span class="bg-success">FontAwesome</span>
+                                        </p>
+
+                                        <div class="project-info space-top-30">
+                                            <div class="info">
+                                                <p><i class="lnr lnr-user"></i><span>Client:<a href="https://www.carnegiefoundation.org" target="_blank"> Carnegie Foundation</a></span></p>
+                                            </div>
+                                            <div class="info">
+                                                <p><i class="lnr lnr-star"></i><span>Skills: Web Development</span></p>
+                                            </div>
+                                            <div class="info">
+                                                <p><i class="lnr lnr-calendar-full"></i><span>Date: January 2015</span></p>
+                                            </div>
+                                        </div><!-- / project-info -->
+
+                                        <div class="info-buttons">
+                                            <a href="../contact.html" class="btn btn-default-filled"><i class="lnr lnr-envelope"></i><span> Contact</span></a>
+                                        </div><!-- / info-buttons -->
+
+                                    </div><!-- section-description -->
+                                </div><!-- / col-sm-4 -->
+                                <div class="col-sm-8 project-description">
+                                    <h3>Project Description</h3>
+                                    <p>At the time, the Pathways program at Carnegie was using Qualtrics to administer surveys to students. Qualtrics was expensive and a little too feature-heavy for what we were using it for. So I was asked to write a survey application. Having our own survey application meant we had control over how the data was formed, stored, and exported. It meant we could implement our own API and support LTI. LTI is a protocol used often in education to support having external assignments that can pass back grades or outcomes. For example, a course hosted on a Learning Management System (like Blackboard, Canvas, Moodle, etc.) could have an assignment, like a math quiz, that is actually hosted elsewhere. Upon viewing the assignment, the Learning Management System does a POST request to the LTI provider. The LTI provider presents the assignment to the student, and the student completes it. Upon completion, the LTI provider passes the grade back to the Learning Management System where it gets recorded in the gradebook.</p>
+                                    <p>The first iteration of the application was completed in January 2015. It underwent multiple bug fixes and enhancements, and it now serves other programs at Carnegie.</p>
+                                    <div class="spacer space-top-2x space-bottom-30"></div>
+                                    <h5 class="section-subheading">Backend</h5>
+                                    <p>Surveys are crafted by first writing multiple YAML files, collectively called a survey package. There's one file for the general configuration of the survey, and one file for each section of questions. This gets uploaded to the application and stored in Google Cloud Storage, along with a corresponding record in the MySQL database. A user can then request a survey from a survey package and pick one or more of the sections. They can then request an offering of the survey, with a start date and an end date. A URL for the offering is generated, and this is what's given to students. Students can access the survey directly through the URL or through an LTI request from their course.</p>
+                                    <h5 class="section-subheading">Frontend</h5>
+                                    <p>The frontend of the application is a simple Bootstrap interface with some extra jQuery code that drives some of the more complex question types, such as branching questions, where selecting a specific answer in one question reveals a follow-up question. For some of our math questions, we use MathJax to render formulas and fractions. A small bit of d3 is used to generate a number line for a few of the questions.</p>
+                                    <h5 class="section-subheading">Design Decisions</h5>
+                                    <p>For the survey packages, I chose to make them in YAML because the language is very English-like, easy to understand, and comes without all the extra punctuation that something like JSON needs. When our analytics team, or other folks within the Pathways program, needed to know how the survey questions and the response options are coded, I simply share the YAML file with them and they're able to get the information they need without having to learn new jargon.</p>
+                                    <p>For the frontend, I chose Bootstrap instead of making a layout from scratch because the design needs were minimal and Bootstrap allowed me to focus more on application development and less on the design of the templates. The grid system, responsiveness, and all the built-in components helped make template design a breeze.</p>
+                                </div>
+                                <!-- / col-sm-8 -->
+                            </div><!-- / row -->
                         </div><!-- / project-content-area -->
-                    </div>
-                    <!-- / project-content-area -->
-
-                    <!-- project sidebar area -->
-                    <div class="col-sm-5 project-sidebar right">
-                        <div class="section-description light">
-                            <h4>PROJECT DETAILS</h4>
-                            <p>An in-house custom survey application. Built with the Google App Engine framework, written in Python.</p>
-                            <br>
-
-                            <p class="skill-list"><strong>Backend:&nbsp;</strong>
-                                <span class="bg-primary">Google App Engine</span>
-                                <span class="bg-primary">python</span>
-                                <span class="bg-primary">webapp2</span>
-                                <span class="bg-primary">jinja2</span>
-                                <span class="bg-primary">Google Cloud SQL</span>
-                            </p>
-
-                            <p class="skill-list"><strong>Frontend:&nbsp;</strong>
-                                <span class="bg-success">Bootstrap</span>
-                                <span class="bg-success">FontAwesome</span>
-                            </p>
-
-                            <h4 class="space-top-30">PROJECT INFO</h4>
-                            <div class="project-info">
-                                <div class="info">
-                                    <p><i class="lnr lnr-user"></i><span>Client:<a href="https://www.carnegiefoundation.org" target="_blank"> Carnegie Foundation</a></span></p>
-                                </div>
-                                <div class="info">
-                                    <p><i class="lnr lnr-star"></i><span>Skills: Web Development</span></p>
-                                </div>
-                                <div class="info">
-                                    <p><i class="lnr lnr-calendar-full"></i><span>Date: January 2015</span></p>
-                                </div>
-                            </div><!-- / project-info -->
-
-                            <div class="info-buttons">
-                                <a href="../contact.html" class="btn btn-default-filled"><i class="lnr lnr-envelope"></i><span> Contact</span></a>
-                            </div><!-- / info-buttons -->
-
-                        </div><!-- section-description -->
-
-                    </div><!-- / col-sm-4 col-md-3 -->
-                    <!-- / project sidebar area -->
+                    </div><!-- / col-sm-12 -->
                 </div><!-- / row -->
             </section>
             <!-- / project content + sidebar -->
