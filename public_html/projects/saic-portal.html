@@ -13,7 +13,7 @@
         <!-- favicon -->
         <link rel="icon" href="../images/favicon.png">
         <!-- page title -->
-        <title>Robert Gutierrez | Survey Tool</title>
+        <title>Robert Gutierrez | SAIC Portal</title>
         <!-- bootstrap css -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <!-- css -->
@@ -71,7 +71,7 @@
             <div id="header-banner">
                 <div class="banner-content single-page text-center">
                     <div class="banner-info">
-                        <h1>Survey Tool</h1>
+                        <h1>SAIC Portal</h1>
                         <p>Carnegie Foundation</p>
                     </div><!-- / banner-info -->
                 </div><!-- / banner-content -->
@@ -97,12 +97,17 @@
                               <!-- Wrapper for slides -->
                               <div class="carousel-inner" role="listbox">
                                 <div class="item active">
-                                    <img src="../images/projects/survey-tool1.jpg" alt="Identify page" title="Identify page">
+                                    <img src="../images/projects/institutional-reports1.jpg" alt="Success data" title="Success data">
                                   <div class="carousel-caption">
                                   </div>
                                 </div>
                                 <div class="item">
-                                    <img src="../images/projects/survey-tool2.jpg" alt="Survey page" title="Survey page">
+                                    <img src="../images/projects/institutional-reports2.jpg" alt="Math Conceptual Knowledge data" title="Math Conceptual Knowledge data">
+                                  <div class="carousel-caption">
+                                  </div>
+                                </div>
+                                <div class="item">
+                                    <img src="../images/projects/institutional-reports3.jpg" alt="At-a-glance data" title="At-a-glance data">
                                   <div class="carousel-caption">
                                   </div>
                                 </div>
@@ -123,7 +128,7 @@
                                 <div class="col-sm-4">
                                     <div class="section-description light">
                                         <h4>Project Info</h4>
-                                        <p>An in-house custom survey application. Built with the Google App Engine framework, written in Python.</p>
+                                        <p>An application designed to create and administer surveys, as well as provide reports, for the Student Agency Improvement Community (SAIC) program at Carnegie. Utilizes the <a href="survey-tool.html">survey tool</a> API and Google Datastore.</p>
                                         <br>
 
                                         <p class="skill-list"><strong>Backend:&nbsp;</strong>
@@ -131,11 +136,12 @@
                                             <span class="bg-primary">python</span>
                                             <span class="bg-primary">webapp2</span>
                                             <span class="bg-primary">jinja2</span>
-                                            <span class="bg-primary">Google Cloud SQL</span>
+                                            <span class="bg-primary">Google&nbsp;Datastore</span>
                                         </p>
 
                                         <p class="skill-list"><strong>Frontend:&nbsp;</strong>
                                             <span class="bg-success">Bootstrap</span>
+                                            <span class="bg-success">d3</span>
                                             <span class="bg-success">FontAwesome</span>
                                         </p>
 
@@ -147,7 +153,7 @@
                                                 <p><i class="lnr lnr-star"></i><span>Skills: Web Development</span></p>
                                             </div>
                                             <div class="info">
-                                                <p><i class="lnr lnr-calendar-full"></i><span>Date: January 2015</span></p>
+                                                <p><i class="lnr lnr-calendar-full"></i><span>Date: December 2016</span></p>
                                             </div>
                                         </div><!-- / project-info -->
 
@@ -158,17 +164,22 @@
                                     </div><!-- section-description -->
                                 </div><!-- / col-sm-4 -->
                                 <div class="col-sm-8 project-description">
-                                    <h3>Project Description</h3>
-                                    <p>At the time, the Pathways program at Carnegie was using Qualtrics to administer surveys to students. Qualtrics was expensive and a little too feature-heavy for what we were using it for. So I was asked to write a survey application. Having our own survey application meant we had control over how the data was formed, stored, and exported. It meant we could implement our own API and support LTI. LTI is a protocol used often in education to support having external assignments that can pass back grades or outcomes. For example, a course hosted on a Learning Management System (like Blackboard, Canvas, Moodle, etc.) could have an assignment, like a math quiz, that is actually hosted elsewhere. Upon viewing the assignment, the Learning Management System does a POST request to the LTI provider. The LTI provider presents the assignment to the student, and the student completes it. Upon completion, the LTI provider passes the grade back to the Learning Management System where it gets recorded in the gradebook.</p>
-                                    <p>The first iteration of the application was completed in January 2015. It underwent multiple bug fixes and enhancements, and it now serves other programs at Carnegie.</p>
+                                    <h3 class="section-heading">Project Description</h3>
+                                    <p>The Student Agency Improvement Community (SAIC) program at Carnegie works with K-12 schools to promote students' sense of agency and ownership of their classroom environment as well as their own learning. To measure this, surveys are administered to students at semi-regular intervals during the school year. SAIC is a network of schools, each with their own sets of needs and ideas for improving their students' agency. Each school has numerous teachers that teach a variety of subjects. Because of all this, there isn't just one survey that all schools and all teachers can give their students. Science teachers will need surveys that address student agency in their science class. Math teachers will need math-specific surveys, and so on. Developing a custom survey with custom questions for every teacher would be a monumentous task, so we need a way to automate this. This is where the SAIC Portal came in.</p>
+                                    <p>We needed to create a vast bank of survey questions and let our users pick and choose the ones they wanted for their survey. That way, the process could be automated. This is how "survey packages" were born. A survey package contains sections of survey questions along with some configuration options. Teachers can pick the sections they want and the system would provision a survey for them. Along with this, they can set time periods for when they wanted the survey to be open; students would not be able to access the survey between time periods. When a time period would end, a report would be generated automatically. The report matches students between time periods so teachers can see how their students' agency as changed over time. Because of our data agreements with our schools, and because the students are minors, the data is de-identified before it is presented to the teacher. The teacher can use the information from the report to improve their teaching and classroom environment.</p>
+                                    <p>Extensive testing was done on the application throughout 2016, but our first "pilot" happened in January 2017. After receiving feedback from teachers, a few modifications and updates were made, and another set of surveys were created for the 2017/2018 school year.</p>
                                     <div class="spacer space-top-2x space-bottom-30"></div>
                                     <h5 class="section-subheading">Backend</h5>
-                                    <p>Surveys are crafted by first writing multiple YAML files, collectively called a survey package. There's one file for the general configuration of the survey, and one file for each section of questions. This gets uploaded to the application and stored in Google Cloud Storage, along with a corresponding record in the MySQL database. A user can then request a survey from a survey package and pick one or more of the sections. They can then request an offering of the survey, with a start date and an end date. A URL for the offering is generated, and this is what's given to students. Students can access the survey directly through the URL or through an LTI request from their course.</p>
+                                    <p>The data schema was a bit complex for this project, and this was the first time I wrote my own models for the Google Datastore. The schema ended up looking something like this:</p>
+                                    <p><pre>
+                                        Survey Package > Survey Master > Survey Order > Survey
+                                    </pre></p>
+                                    <p>There are various other models involved as well like users and groups. But this is how we end up with a survey.</p>
+                                    <p>As far as the reports, I used the stock-and-flow code that we use in our Pathways Portal application. It underwent extensive modification due to the differences in the way surveys are administered. Data needed to be grouped into subjects, then measures, then submeasures. The way it generates the reports is mostly the same: the system queries the <a href="survey-tool.html">survey tool</a> API for the data, groups the data, then maps the students' agency for each measure. The data is saved in JSON format, where it is read by the report template and parsed by d3 to create the data visualizations. The layout of the report can be seen in the screenshots at the top of the page.</p>
                                     <h5 class="section-subheading">Frontend</h5>
-                                    <p>The frontend of the application is a simple Bootstrap interface with some extra jQuery code that drives some of the more complex question types, such as branching questions, where selecting a specific answer in one question reveals a follow-up question. For some of our math questions, we use MathJax to render formulas and fractions. A small bit of d3 is used to generate a number line for a few of the questions.</p>
+                                    <p>This application uses the same tech stack that our other applications use: Bootstrap, jQuery, d3 for data visualization.</p>
                                     <h5 class="section-subheading">Design Decisions</h5>
-                                    <p>For the survey packages, I chose to make them in YAML because the language is very English-like, easy to understand, and comes without all the extra punctuation that something like JSON needs. When our analytics team, or other folks within the Pathways program, needed to know how the survey questions and the response options are coded, I simply share the YAML file with them and they're able to get the information they need without having to learn new jargon.</p>
-                                    <p>For the frontend, I chose Bootstrap instead of making a layout from scratch because the design needs were minimal and Bootstrap allowed me to focus more on application development and less on the design of the templates. The grid system, responsiveness, and all the built-in components helped make template design a breeze.</p>
+                                    <p>A lot of the hard work has already been done in our other applications, specifically our Pathways Portal application. Rather than re-invent the wheel, and to ensure consistency among our applications, I started with a "shell" of the Pathways Portal and built everything from there. Because SAIC is a separate program from Pathways, I needed to change the color scheme and logo. My colleague <a href="http://kennethdesigns.com">Kenneth Fernandez</a> designed the new logo while I developed the new color scheme.</p>
                                 </div>
                                 <!-- / col-sm-8 -->
                             </div><!-- / row -->
@@ -180,8 +191,8 @@
 
             <!-- project pagination -->
             <div class="pagination">
-                <a href="birthday-card.html" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
-                <a href="institutional-reports.html" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
+                <a href="institutional-reports.html" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
+                <a href="carnegie-labs.html" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
             </div><!-- / project pagination -->
 
         </div><!-- / container -->
