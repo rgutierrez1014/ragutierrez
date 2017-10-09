@@ -1431,6 +1431,21 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
   background-color: #de3f3f;
 }
 
+.progress-bar-golden {
+  background-color: #cca653;
+}
+
+.progress.golden {
+  transition: box-shadow .6s ease;
+}
+
+.progress.golden:hover {
+  box-shadow:
+    0 0 4px 2px #cca653,
+    0 0 10px 3px #f5d38a,
+    0 0 14px 5px #fbf788;
+}
+
 .progress-label .sr-only {
   display: none;
 }
@@ -2448,10 +2463,9 @@ p.skill-list {
   height: 100%;
 }
 
-#facts {
+#facts, #about-me {
   padding: 30px 0;
   border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
 }
 
 .fact-icon {
