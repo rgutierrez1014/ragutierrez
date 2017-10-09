@@ -13,7 +13,7 @@
         <!-- favicon -->
         <link rel="icon" href="../images/favicon.png">
         <!-- page title -->
-        <title>Robert Gutierrez | SAIC Portal</title>
+        <title>Robert Gutierrez | Simple Recipes</title>
         <!-- bootstrap css -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <!-- css -->
@@ -71,8 +71,7 @@
             <div id="header-banner">
                 <div class="banner-content single-page text-center">
                     <div class="banner-info">
-                        <h1>SAIC Portal</h1>
-                        <p>Carnegie Foundation</p>
+                        <h1>Simple Recipes</h1>
                     </div><!-- / banner-info -->
                 </div><!-- / banner-content -->
             </div>
@@ -128,32 +127,23 @@
                                 <div class="col-sm-4">
                                     <div class="section-description light">
                                         <h4>Project Info</h4>
-                                        <p>An application designed to create and administer surveys, as well as provide reports, for the Student Agency Improvement Community (SAIC) program at Carnegie. Utilizes the <a href="survey-tool.html">survey tool</a> API and Google Datastore.</p>
+                                        <p>A collaborative project that manifested from a colleague's simple iced coffee recipe. We created a set of recipes, using one or two ingredients, that can be prepared by using ingredients from the Carnegie Foundation's kitchens.</p>
                                         <br>
 
-                                        <p class="skill-list"><strong>Backend:&nbsp;</strong>
-                                            <span class="bg-primary">Google App Engine</span>
-                                            <span class="bg-primary">python</span>
-                                            <span class="bg-primary">webapp2</span>
-                                            <span class="bg-primary">jinja2</span>
-                                            <span class="bg-primary">Google&nbsp;Datastore</span>
+                                        <p class="skill-list"><strong>Backend:&nbsp;N/A</strong>
                                         </p>
 
                                         <p class="skill-list"><strong>Frontend:&nbsp;</strong>
-                                            <span class="bg-success">Bootstrap</span>
-                                            <span class="bg-success">d3</span>
-                                            <span class="bg-success">FontAwesome</span>
+                                            <span class="bg-success">Photoshop</span>
+                                            <span class="bg-success">Illustrator</span>
                                         </p>
 
                                         <div class="project-info space-top-30">
                                             <div class="info">
-                                                <p><i class="lnr lnr-user"></i><span>Client:<a href="https://www.carnegiefoundation.org" target="_blank"> Carnegie Foundation</a></span></p>
+                                                <p><i class="lnr lnr-star"></i><span>Skills: Graphic Design, Creative Writing</span></p>
                                             </div>
                                             <div class="info">
-                                                <p><i class="lnr lnr-star"></i><span>Skills: Web Development</span></p>
-                                            </div>
-                                            <div class="info">
-                                                <p><i class="lnr lnr-calendar-full"></i><span>Date: December 2016</span></p>
+                                                <p><i class="lnr lnr-calendar-full"></i><span>Date: December 2015</span></p>
                                             </div>
                                         </div><!-- / project-info -->
 
@@ -165,21 +155,16 @@
                                 </div><!-- / col-sm-4 -->
                                 <div class="col-sm-8 project-description">
                                     <h3 class="section-heading">Project Description</h3>
-                                    <p>The Student Agency Improvement Community (SAIC) program at Carnegie works with K-12 schools to promote students' sense of agency and ownership of their classroom environment as well as their own learning. To measure this, surveys are administered to students at semi-regular intervals during the school year. SAIC is a network of schools, each with their own sets of needs and ideas for improving their students' agency. Each school has numerous teachers that teach a variety of subjects. Because of all this, there isn't just one survey that all schools and all teachers can give their students. Science teachers will need surveys that address student agency in their science class. Math teachers will need math-specific surveys, and so on. Developing a custom survey with custom questions for every teacher would be a monumentous task, so we need a way to automate this. This is where the SAIC Portal came in.</p>
-                                    <p>We needed to create a vast bank of survey questions and let our users pick and choose the ones they wanted for their survey. That way, the process could be automated. This is how "survey packages" were born. A survey package contains sections of survey questions along with some configuration options. Teachers can pick the sections they want and the system would provision a survey for them. Along with this, they can set time periods for when they wanted the survey to be open; students would not be able to access the survey between time periods. When a time period would end, a report would be generated automatically. The report matches students between time periods so teachers can see how their students' agency as changed over time. Because of our data agreements with our schools, and because the students are minors, the data is de-identified before it is presented to the teacher. The teacher can use the information from the report to improve their teaching and classroom environment.</p>
-                                    <p>Extensive testing was done on the application throughout 2016, but our first "pilot" happened in January 2017. After receiving feedback from teachers, a few modifications and updates were made, and another set of surveys were created for the 2017/2018 school year.</p>
+                                    <p>Carnegie's employees are graced with a multitude of free drinks and free food. As the days go on, this can turn from a blessing to a curse. There's only so many days that you can drink Vitamin Water Power-C before you get sick of it. Same goes for our coffee and tea. A number of us took to adding some jazz to our daily food and drink rituals. One day, my colleague Hai Hoang came downstairs with what looked like iced coffee. I asked how he made it. His reply: "Coffee and ice." Like it was that simple.</p>
+                                    <p>It <em>was</em> that simple. When I asked more of my colleagues for similar food and drink hacks, I got a lot more than iced coffee: tea with a lemon slice, "Farewell Cookies a-la-mode" (employees receive chocolate chip cookies on their last day at Carnegie). My contribution was an Arnold Palmer: lemonade-flavored Vitamin Water combined with iced tea.</p>
+                                    <p>My colleague <a href="https://kennethdesigns.com">Kenneth Fernandez</a> and I decided to make these into recipe cards, with a short description and a visual instruction guide. I wrote most of the descriptions, while Kenny handled the design and layout of the recipe cards. We distributed one recipe per week in our weekly internal newsletter.</p>
                                     <div class="spacer space-top-2x space-bottom-30"></div>
                                     <h5 class="section-subheading">Backend</h5>
-                                    <p>The data schema was a bit complex for this project, and this was the first time I wrote my own models for the Google Datastore. The schema ended up looking something like this:</p>
-                                    <p><pre>
-Survey Package > Survey Master > Survey Order > Survey
-                                    </pre></p>
-                                    <p>There are various other models involved as well like users and groups. But this is how we end up with a survey.</p>
-                                    <p>As far as the reports, I used the stock-and-flow code that we use in our Pathways Portal application. It underwent extensive modification due to the differences in the way surveys are administered. Data needed to be grouped into subjects, then measures, then submeasures. The way it generates the reports is mostly the same: the system queries the <a href="survey-tool.html">survey tool</a> API for the data, groups the data, then maps the students' agency for each measure. The data is saved in JSON format, where it is read by the report template and parsed by d3 to create the data visualizations. The layout of the report can be seen in the screenshots at the top of the page.</p>
+                                    <p>N/A</p>
                                     <h5 class="section-subheading">Frontend</h5>
-                                    <p>This application uses the same tech stack that our other applications use: Bootstrap, jQuery, d3 for data visualization.</p>
+                                    <p>Graphics, layout, and design done in Photoshop and Illustrator.</p>
                                     <h5 class="section-subheading">Design Decisions</h5>
-                                    <p>A lot of the hard work has already been done in our other applications, specifically our Pathways Portal application. Rather than re-invent the wheel, and to ensure consistency among our applications, I started with a "shell" of the Pathways Portal and built everything from there. Because SAIC is a separate program from Pathways, I needed to change the color scheme and logo. My colleague <a href="http://kennethdesigns.com">Kenneth Fernandez</a> designed the new logo while I developed the new color scheme.</p>
+                                    <p>Kenny handled the design on this one, but the idea of having two ingredients as a maximum was a collaborative decision. As far as the descriptions, I decided to write flowery, dramatic text to juxtapose with the two-item recipes.</p>
                                 </div>
                                 <!-- / col-sm-8 -->
                             </div><!-- / row -->
@@ -191,8 +176,8 @@ Survey Package > Survey Master > Survey Order > Survey
 
             <!-- project pagination -->
             <div class="pagination">
-                <a href="institutional-reports.html" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
-                <a href="carnegie-labs.html" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
+                <a href="hipster-logo.html" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
+                <a href="birthday-card.html" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
             </div><!-- / project pagination -->
 
         </div><!-- / container -->
