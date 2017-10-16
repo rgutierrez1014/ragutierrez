@@ -1,4 +1,7 @@
 <?php
+error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");
 
 $errorMSG = "";
 
@@ -25,7 +28,7 @@ if (empty($_POST["message"])) {
 }
 
 //Add your email here
-$EmailTo = "robert@ragutierrez";
+$EmailTo = "Robert Gutierrez <robert@ragutierrez.com>";
 $Subject = "ragutierrez.com: New Message Received";
 
 // prepare email body text
@@ -44,16 +47,25 @@ $Body .= $message;
 $Body .= "\n";
 
 // send email
+$headers = array("From: ".$name." <".$email.">",
+    "Reply-To: ".$name." <".$email.">",
+    "X-Mailer: PHP/" . PHP_VERSION
+);
+$headers = implode("\r\n", $headers);
 $success = mail($EmailTo, $Subject, $Body, "From:".$email);
 
 // redirect to success page
 if ($success && $errorMSG == ""){
    echo "success";
 }else{
+    if (!$success) {
+        $err_msg = error_get_last();
+        print_r($err_msg);
+    }
     if($errorMSG == ""){
-        echo "Something went wrong :(";
+        echo "Something went wrong :( ".$err_msg['message'];
     } else {
-        echo $errorMSG;
+        echo $errorMSG." | ".$err_msg['message'];
     }
 }
 
