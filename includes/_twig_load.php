@@ -21,7 +21,7 @@ function full_url( $s, $use_forwarded_host = false )
 
 $base_dir = url_origin($_SERVER);
 
-$loader = new Twig_Loader_Filesystem(dirname(__DIR__)."/public_html/templates");
+$loader = new Twig_Loader_Filesystem(dirname(__DIR__)."/html/templates");
 $twig = new Twig_Environment($loader, []);
 $default_context = array(
     'base_dir' => $base_dir,
