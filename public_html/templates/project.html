@@ -3,6 +3,9 @@
 {% block banner %}
     <div class="banner-info">
         <h1>{{ project.title }}</h1>
+        {% if project.client %}
+        <p>{{ project.client }}</p>
+        {% endif %}
     </div><!-- / banner-info -->
 {% endblock %}
 {% block content %}
@@ -47,7 +50,7 @@
                         <div class="col-sm-4">
                             <div class="section-description light">
                                 <h4>Project Info</h4>
-                                <p>{{ project.info }}</p>
+                                <p>{{ project.info|raw }}</p>
                                 <br>
 
                                 <p class="skill-list">
@@ -91,7 +94,10 @@
                                     {% if project.demo %}
                                     <a href="{{ project.demo }}" target="_blank" class="btn btn-primary-filled"><i class="lnr lnr-eye"></i><span> View Demo</span></a>
                                     {% endif %}
-                                    <a href="contact.php" class="btn btn-default-filled"><i class="lnr lnr-envelope"></i><span> Contact</span></a>
+                                    {% if project.source %}
+                                    <a href="{{ project.source }}" target="_blank" class="btn btn-primary-filled"><i class="lnr lnr-code"></i><span> Source</span></a>
+                                    {% endif %}
+                                    <a href="{{ base_dir }}/contact.php" class="btn btn-default-filled"><i class="lnr lnr-envelope"></i><span> Contact</span></a>
                                 </div><!-- / info-buttons -->
 
                             </div><!-- section-description -->
@@ -117,8 +123,8 @@
 
     <!-- project pagination -->
     <div class="pagination">
-        <a href="{{ project.previous }}" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
-        <a href="{{ project.next }}" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
+        <a href="{{ base_dir }}/projects/{{ project.previous }}" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
+        <a href="{{ base_dir }}/projects/{{ project.next }}" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
     </div><!-- / project pagination -->
 
 </div><!-- / container -->

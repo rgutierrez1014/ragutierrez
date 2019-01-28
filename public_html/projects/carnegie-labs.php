@@ -42,14 +42,15 @@ $context = array_merge($default_context, array(
         ),
         'date' => 'April 2016',
         'demo' => 'https://carnegielabs.ragutierrez.com',
+        'source' => null,
         'description' => array(
             'desc' => $desc,
             'backend' => $backend,
             'frontend' => $frontend,
             'design_decisions' => $design_decisions
         ),
-        'previous' => 'projects/saic-portal.php',
-        'next' => 'projects/hipster-logo.php',
+        'previous' => 'saic-portal.php',
+        'next' => 'hipster-logo-shortcode.php',
     )
 ));
 
