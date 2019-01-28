@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+{% block title %}Robert Gutierrez | Portfolio{% endblock %}
+{% block banner %}
+                    <div class="banner-info">
+                        <h1>Portfolio</h1>
+                    </div><!-- / banner-info -->
+{% endblock %}
+{% block content %}
+    {% include "_portfolio.html" %}
+{% endblock %}
+{% block tail %}
+    <!-- portfolio -->
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/jquery.shuffle.min.js"></script>
+    <!-- lightbox -->
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript">
+    // This will create a single gallery from all elements that have class "lightbox"
+    $('.lightbox').each(function() {
+        $(this).magnificPopup({
+            delegate: 'a.open-gallery', // the selector for gallery item
+            type: 'image',
+            gallery: {
+              enabled:true
+            }
+        });
+    });
+    </script>
+    <!-- / lightbox -->
+    <!-- / portfolio -->
+{% endblock %}

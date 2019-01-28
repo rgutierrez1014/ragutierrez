@@ -1,0 +1,110 @@
+{% extends "layouts/base.html" %}
+{% block title %}Robert Gutierrez | About{% endblock %}
+{% block banner %}
+    <div class="banner-info">
+        <h1>About me</h1>
+    </div><!-- / banner-info -->
+{% endblock %}
+{% block content %}
+    <div id="page-content" class="container">
+        <div class="section-w-image">
+            <div class="row">
+                <div class="col-sm-4 about-me-img"><p></p></div>
+                <div class="col-sm-8 col-sm-offset-4 about-description">
+                    <h4>Skills</h4>
+
+                    <p><strong>Backend</strong> <span class="pull-right">90%</span></p>
+                    <div class="progress progress-label">
+                        <div class="progress-bar progress-bar-primary animated first fadeInLeft" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                        </div>
+                    </div><!-- / progress -->
+
+                    <p><strong>Frontend</strong> <span class="pull-right">90%</span></p>
+                    <div class="progress progress-label">
+                        <div class="progress-bar progress-bar-success animated second fadeInLeft" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                        </div>
+                    </div><!-- / progress -->
+
+                    <p><strong>Photoshop</strong> <span class="pull-right">90%</span></p>
+                    <div class="progress progress-label">
+                        <div class="progress-bar progress-bar-info animated third fadeInLeft" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                        </div>
+                    </div><!-- / progress -->
+
+                    <p><strong>Graphic Design</strong> <span class="pull-right">70%</span></p>
+                    <div class="progress progress-label">
+                        <div class="progress-bar progress-bar-warning animated fourth fadeInLeft" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                        </div>
+                    </div><!-- / progress -->
+
+                    <p><strong>Video Production</strong> <span class="pull-right">60%</span></p>
+                    <div class="progress progress-label">
+                        <div class="progress-bar progress-bar-danger animated sixth fadeInLeft" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                        </div>
+                    </div><!-- / progress -->
+
+                    <p><strong>Fashion Sense</strong> <span class="pull-right">100%</span></p>
+                    <div class="progress golden progress-label">
+                        <div class="progress-bar progress-bar-golden animated seventh fadeInLeft" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        </div>
+                    </div><!-- / progress -->
+
+                </div><!-- / about-description -->
+            </div><!-- / row -->
+        </div><!-- / section-w-image -->
+
+        <section id="about-me" class="project-description">
+            <h3>About Me</h3>
+            <p>My name is Robert Gutierrez and I am a creative, collaborative web developer with strong user empathy. I have 5 years of experience building web applications and tools to empower colleagues and customers to do their best work.</p>
+            <p>I started my first programming projects in 7th grade, when I was introduced to web development and video game development. Back then, my knowledge was limited to HTML/CSS and a game engine called GameMaker. I honed my skills throughout high school and was able to get a small intern position at the Association of International Product Marketing and Management (AIPMM), helping design flyers and other conference materials, as well as helping to maintain some Wordpress sites. My next position was as a web developer at my university, California State University, Chico. There, I learned a lot about PHP, Javascript and SQL databases. My coursework at the university dealt mostly with video game production as well as courses on production in film and web sites.</p>
+            <p>For a long time, video games were my passion. As a college student, I helped program several games, for myself and others, for class projects. I participated in Chico State Game Studios, an organization based around the students enrolled in the "APCG 495" course. There were around 40 students participating at a time. The course was ran like a real studio: we broke into teams like concept art, level design, etc., we had team leads, we used an SVN repository for all our code. I also learned what "crunch" was. I spent many late nights in the computer lab making sure we hit our deadlines.</p>
+            <p>After graduating college, I was hired by the Carnegie Foundation for the Advancement of Teaching. I've been a web developer here for 3 years. In my opinion, I have learned more here than I have in all my other positions combined. I've had the pleasure of working with a great team and great mentors who have pushed me and challenged me to do my best work. My passion may have been video games, but I am proud of the work I've done here, and over these three years I've had time to develop my new passion: creative writing. I'm currently writing a novel and expect to have a first draft soon.</p>
+            <p><a href="static/files/Robert_Gutierrez_Resume.pdf" class="btn btn-primary-filled btn-lg" role="button"><i class="lnr lnr-download"></i><span>&nbsp;Resume</span></a>
+        </section>
+
+        <!-- facts 3 col -->
+        <section id="facts">
+            <div class="row">
+
+                <!-- fact -->
+                <div class="col-sm-4 text-center">
+                    <i class="fact-icon lnr lnr-users"></i>
+                    <h3 class="timer" id="clients" data-to="4" data-speed="1500">4</h3>
+                    <h5 class="fact-title">Clients</h5>
+                </div>
+                <!-- / fact -->
+
+                <!-- fact -->
+                <div class="col-sm-4 text-center">
+                    <i class="fact-icon lnr lnr-briefcase"></i>
+                    <h3 class="timer" id="projects" data-to="10" data-speed="2000">10+</h3>
+                    <h5 class="fact-title">Projects Completed</h5>
+                </div>
+                <!-- / fact -->
+
+                <!-- fact -->
+                <div class="col-sm-4 text-center">
+                    <i class="fact-icon lnr lnr-coffee-cup"></i>
+                    <h3 class="timer" id="coffee" data-to="9001" data-speed="2500">Over 9000</h3>
+                    <h5 class="fact-title">Cups of Coffee</h5>
+                </div>
+                <!-- / fact -->
+            </div><!-- / row -->
+        </section>
+        <!-- / facts 4 col -->
+
+    </div><!-- / container -->
+{% endblock %}
+{% block tail %}
+    <!-- facts counter -->
+    <script src="js/jquery.countTo.js"></script>
+    <script type="text/javascript">
+        $('.timer').countTo({
+            refreshInterval: 60,
+            formatter: function (value, options) {
+                return value.toFixed(options.decimals);
+            },
+        });
+    </script>
+    <!-- / facts counter -->
+{% endblock %}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Robert Gutierrez, Full-Stack Web Developer">
+        <meta name="keywords" content="web developer, developer, full-stack, programming, websites, web design, python, php" />
+        <meta name="author" content="Robert Gutierrez">
+
+        <!-- favicon -->
+        <link rel="icon" href="{{ static_dir }}/images/favicon.png">
+        <!-- page title -->
+        <title>{% block title %}{% endblock %}</title>
+        <!-- bootstrap css -->
+        <link href="{{ static_dir }}/css/bootstrap.min.css" rel="stylesheet">
+        <!-- css -->
+        <link href="{{ static_dir }}/css/style.css" rel="stylesheet">
+        <link href="{{ static_dir }}/css/animate.css" rel="stylesheet">
+        <link href="{{ static_dir }}/css/magnific-popup.css" rel="stylesheet">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Oswald:400,500|Halant" rel="stylesheet">
+        <link href="{{ static_dir }}/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ static_dir }}/css/linear-icons.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+
+        <!-- preloader -->
+        <div id="preloader">
+            <div class="spinner spinner-round"></div>
+        </div>
+        <!-- / preloader -->
+
+        <!-- header -->
+        <header>
+            <!-- nav -->
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="{{ static_dir }}/images/logo.png" alt="logo"></a>
+                    </div><!-- / navbar-header -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li{{ active_menu_item == "home" ? ' class="active"' : '' }}><a href="/"><span>Home</span></a></li>
+                            <li{{ active_menu_item == "about" ? ' class="active"' : '' }}><a href="{{ base_dir }}/about.php"><span>About</span></a></li>
+                            <li{{ active_menu_item == "portfolio" ? ' class="active"' : '' }}><a href="{{ base_dir }}/portfolio.php"><span>Portfolio</span></a></li>
+                            <li><a href="https://medium.com/@rgutierrez1014/latest" target="_blank"><span>Blog</span></a></li>
+                            <li{{ active_menu_item == "contact" ? ' class="active"' : '' }}><a href="{{ base_dir }}/contact.php"><span>Contact</span></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="{{ static_dir }}/files/Robert_Gutierrez_Resume.pdf"><span class="lnr lnr-download"></span>&nbsp;Resume</a></li>
+                        </ul>
+                    </div><!--/ nav-collapse -->
+                </div><!-- / container -->
+            </nav>
+            <!-- / nav -->
+
+            <!-- header-banner -->
+            <div id="header-banner" class="clearfix">
+                <div class="banner-content text-center">
+                    {% block banner %}{% endblock %}
+                </div><!-- / banner-content -->
+                <p class="photo-credit">Photo by <a href="https://unsplash.com/photos/OqtafYT5kTw">Ilya Pavlov</a> on <a href="https://unsplash.com/">Unsplash</a></p>
+            </div>
+            <!-- / header-banner -->
+        </header>
+        <!-- / header -->
+
+        <!-- content -->
+        {% block content %}{% endblock %}
+        <!-- / content -->
+
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <p class="footer-info">&copy; Copyright 2017 Robert Gutierrez</p>
+            </div><!-- / container -->
+        </footer>
+        <!-- / footer -->
+
+        <!-- javascript -->
+        <script src="{{ static_dir }}/js/jquery.min.js"></script>
+        <script src="{{ static_dir }}/js/bootstrap.min.js"></script>
+        <script src="{{ static_dir }}/js/jquery.easing.min.js"></script>
+
+        {% block tail %}{% endblock %}
+
+        <!-- preloader -->
+        <script src="{{ static_dir }}/js/preloader.js"></script>
+        <!-- ./ preloader -->
+
+        <!-- / javascript -->
+    </body>
+</html>
