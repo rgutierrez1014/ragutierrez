@@ -1,6 +1,6 @@
 <?php
 
-require_once "../_twig_load.php";
+require_once "../../includes/_twig_load.php";
 
 $desc = <<<DESC
 <p>As is the custom for a number of development teams, we needed a good April Fool's prank. During my first year at Carnegie, I found that the only April Fool's custom was an alternate version of our weekly internal newsletter, where we would write various short satirical articles. For April Fool's 2015, I contributed something related to our transition between Learning Management Systems. It was a hit, and I had a personal visit by the Carnegie president to praise the article. For April Fool's 2016, I wanted to raise the bar, and that's how Carnegie Labs was born.</p>
@@ -23,7 +23,12 @@ DESIGN_DECISIONS;
 $context = array_merge($default_context, array(
     'project' => array(
         'title' => 'Carnegie Labs',
-        'image' => 'carnegie-labs1.jpg',
+        'images' => array(
+            array(
+                'name' => 'carnegie-labs1.jpg',
+                'description' => 'Carnegie Labs'
+            )
+        ),
         'info' => "A personal project done as an April Fool's joke at Carnegie.",
         'backend' => null,
         'frontend' => array(

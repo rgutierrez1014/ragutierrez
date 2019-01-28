@@ -19,7 +19,7 @@ function full_url( $s, $use_forwarded_host = false )
     return url_origin( $s, $use_forwarded_host ) . $s['REQUEST_URI'];
 }
 
-$loader = new Twig_Loader_Filesystem(dirname(__FILE__)."/templates");
+$loader = new Twig_Loader_Filesystem(dirname(__DIR__)."/public_html/templates");
 $twig = new Twig_Environment($loader, []);
 $default_context = array('static_dir' => url_origin($_SERVER)."/static");
 ?>
