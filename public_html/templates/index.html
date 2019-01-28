@@ -1,0 +1,39 @@
+{% extends "layouts/base.html" %}
+{% block title %}Robert Gutierrez, Full-Stack Web Developer{% endblock %}
+{% block banner %}
+<div class="row">
+    <div class="banner-info col-sm-8 col-sm-offset-2">
+        <h1>ROBERT GUTIERREZ</h1>
+        <p>Full-Stack Web Developer</p>
+    </div><!-- / banner-info -->
+</div><!-- / row -->
+<div class="row">
+    <div class="banner-summary col-sm-8 col-sm-offset-2">
+        <p>A creative, collaborative web developer with strong user empathy. I have 5 years of experience building web applications and tools to empower colleagues and customers to do their best work.</p>
+    </div><!-- / banner-summary -->
+</div><!-- / row -->
+{% endblock %}
+{% block content %}
+    {% include "_portfolio.html" %}
+{% endblock %}
+{% block tail %}
+    <!-- portfolio -->
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.shuffle.min.js"></script>
+    <!-- lightbox -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript">
+    // This will create a single gallery from all elements that have class "lightbox"
+    $('.lightbox').each(function() {
+        $(this).magnificPopup({
+            delegate: 'a.open-gallery', // the selector for gallery item
+            type: 'image',
+            gallery: {
+              enabled:true
+            }
+        });
+    });
+    </script>
+    <!-- / lightbox -->
+    <!-- / portfolio -->
+{% endblock %}
