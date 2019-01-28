@@ -1,0 +1,97 @@
+{% extends "layouts/base.html" %}
+{% block title %}Robert Gutierrez | {{ project.title }}{% endblock %}
+{% block banner %}
+    <div class="banner-info">
+        <h1>{{ project.title }}</h1>
+    </div><!-- / banner-info -->
+{% endblock %}
+{% block content %}
+<div id="page-content" class="container">
+    <!-- project content + sidebar -->
+    <section id="project">
+        <div class="row">
+            <!-- project content area -->
+
+            <div class="col-sm-12">
+                <div class="project-content-area">
+                    <img src="../static/images/projects/{{ project.image }}" alt="{{ project.title }}" title="{{ project.title }}" class="space-bottom-30">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="section-description light">
+                                <h4>Project Info</h4>
+                                <p>{{ project.info }}</p>
+                                <br>
+
+                                <p class="skill-list">
+                                    <strong>Backend:&nbsp;
+                                    {% if project.backend %}
+                                        </strong>
+                                        {% for tech in project.backend %}
+                                            <span class="bg-primary">{{ tech }}</span>
+                                        {% endfor %}
+                                    {% else %}
+                                        N/A</strong>
+                                    {% endif %}
+                                </p>
+
+                                <p class="skill-list"><strong>Frontend:&nbsp;
+                                    {% if project.frontend %}
+                                        </strong>
+                                        {% for tech in project.frontend %}
+                                            <span class="bg-success">{{ tech }}</span>
+                                        {% endfor %}
+                                    {% else %}
+                                        N/A</strong>
+                                    {% endif %}
+                                </p>
+
+                                <div class="project-info space-top-30">
+                                    {% if project.client %}
+                                    <div class="info">
+                                        <p><i class="lnr lnr-user"></i><span>Client: <a href="{{ project.client.url }}" target="_blank">{{ project.client.name }}</a></span></p>
+                                    </div>
+                                    {% endif %}
+                                    <div class="info">
+                                        <p><i class="lnr lnr-star"></i><span>Skills: {{ project.skills|join(', ') }}</span></p>
+                                    </div>
+                                    <div class="info">
+                                        <p><i class="lnr lnr-calendar-full"></i><span>Date: {{ project.date }}</span></p>
+                                    </div>
+                                </div><!-- / project-info -->
+
+                                <div class="info-buttons">
+                                    {% if project.demo %}
+                                    <a href="{{ project.demo }}" target="_blank" class="btn btn-primary-filled"><i class="lnr lnr-eye"></i><span> View Demo</span></a>
+                                    {% endif %}
+                                    <a href="contact.php" class="btn btn-default-filled"><i class="lnr lnr-envelope"></i><span> Contact</span></a>
+                                </div><!-- / info-buttons -->
+
+                            </div><!-- section-description -->
+                        </div><!-- / col-sm-4 -->
+                        <div class="col-sm-8 project-description">
+                            <h3 class="section-heading">Project Description</h3>
+                            {{ project.description.desc|raw }}
+                            <div class="spacer space-top-2x space-bottom-30"></div>
+                            <h5 class="section-subheading">Backend</h5>
+                            {{ project.description.backend|raw }}
+                            <h5 class="section-subheading">Frontend</h5>
+                            {{ project.description.frontend|raw }}
+                            <h5 class="section-subheading">Design Decisions</h5>
+                            {{ project.description.design_decisions|raw }}
+                        </div>
+                        <!-- / col-sm-8 -->
+                    </div><!-- / row -->
+                </div><!-- / project-content-area -->
+            </div><!-- / col-sm-12 -->
+        </div><!-- / row -->
+    </section>
+    <!-- / project content + sidebar -->
+
+    <!-- project pagination -->
+    <div class="pagination">
+        <a href="{{ project.previous }}" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>Previous Project</span></a>
+        <a href="{{ project.next }}" class="btn btn-direction btn-default-filled pull-right"><span>Next Project</span><i class="fa fa-long-arrow-right"></i></a>
+    </div><!-- / project pagination -->
+
+</div><!-- / container -->
+{% endblock %}

@@ -1,13 +1,10 @@
 <?php
 
-require_once '../vendor/autoload.php';
+require_once '_twig_load.php';
 
-$loader = new Twig_Loader_Filesystem('templates');
-$twig = new Twig_Environment($loader, []);
-
-$context = array(
+$context = array_merge($default_context, array(
     'active_menu_item' => 'home'
-);
+));
 
 echo $twig->render('index.html', $context);
 
