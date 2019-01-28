@@ -1,150 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layouts/base.html" %}
+{% block title %}Robert Gutierrez | Contact{% endblock %}
+{% block banner %}
+    <div class="banner-info">
+        <h1>Contact</h1>
+    </div><!-- / banner-info -->
+{% endblock %}
+{% block content %}
+    <div id="page-content" class="container">
+        <div class="row">
+            <div class="col-sm-6 contact-info text-center space-bottom">
+                <div class="contact-icon">
+                    <i class="lnr lnr-sync"></i>
+                </div>
+                <h5>SOCIAL</h5>
+                <p class="social-contact">LinkedIn: <a href="https://www.linkedin.com/in/rgutierrez1014"><i class="fa fa-linkedin"></i></a></p>
+                <p class="social-contact">Academia: <a href="https://csuchico.academia.edu/RobertGutierrez">&nbsp;<span style="font-family: 'Halant', Georgia, Cambria, 'Times New Roman', Times, serif;">A</span></a></p>
+                <p class="social-contact">Medium: <a href="https://medium.com/@rgutierrez1014">&nbsp;<span style="font-family: 'Halant', Georgia, Cambria, 'Times New Roman', Times, serif;">M</span></a></p>
+            </div><!-- / contact-info -->
 
-    <head>
+            <div class="col-sm-6 contact-info text-center space-bottom">
+                <div class="contact-icon">
+                    <i class="lnr lnr-envelope"></i>
+                </div>
+                <h5>EMAIL</h5>
+                <p><a href="mailto:robert@ragutierrez.com">robert@ragutierrez.com</a></p>
+            </div><!-- / contact-info -->
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Robert Gutierrez, Full-Stack Web Developer">
-        <meta name="keywords" content="web developer, developer, full-stack, programming, websites" />
-        <meta name="author" content="Robert Gutierrez">
+        </div><!-- / row -->
 
-        <!-- favicon -->
-        <link rel="icon" href="images/favicon.png">
-        <!-- page title -->
-        <title>Robert Gutierrez | Contact</title>
-        <!-- bootstrap css -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- css -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/animate.css" rel="stylesheet">
-        <!-- fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Oswald:400,500" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/linear-icons.css">
+        <div class="row contact-area">
+            <div class="col-sm-6 contact-text">
+                <img src="static/images/contact-img2.jpg" alt="Robert Gutierrez" title="Robert Gutierrez">
+            </div><!-- / contact-text -->
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+            <div class="col-sm-6 contact-form-area">
+                <p>Feel free to contact me about job openings, exciting opportunities, your favorite coffee and chocolate, and why Blade Runner is the best movie ever made.</p>
+                <br>
+                <p><a href="mailto:robert@ragutierrez.com" class="btn btn-primary-filled" role="button"><i class="lnr lnr-envelope"></i><span>&nbsp;Email me</span></a>
+                    <a href="https://www.linkedin.com/in/rgutierrez1014" class="btn btn-primary-filled" role="button"><i class="fa fa-linkedin"></i><span>&nbsp;LinkedIn</span></a></p>
+            </div><!-- / col-sm-6 -->
+        </div><!-- / contact-area -->
 
-    </head>
-
-    <body>
-
-        <!-- preloader -->
-        <div id="preloader">
-            <div class="spinner spinner-round"></div>
-        </div>
-        <!-- / preloader -->
-
-        <!-- header -->
-        <header>
-            <!-- nav -->
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
-                    </div><!-- / navbar-header -->
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html"><span>Home</span></a></li>
-                            <li><a href="about.html"><span>About</span></a></li>
-                            <li><a href="portfolio.html"><span>Portfolio</span></a></li>
-                            <li><a href="https://medium.com/@rgutierrez1014/latest" target="_blank"><span>Blog</span></a></li>
-                            <li class="active"><a href="contact.html"><span>Contact</span></a></li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="files/Robert_Gutierrez_Resume.pdf"><span class="lnr lnr-download"></span>&nbsp;Resume</a></li>
-                        </ul>
-                    </div><!--/ nav-collapse -->
-                </div><!-- / container -->
-            </nav>
-            <!-- / nav -->
-
-            <!-- header-banner -->
-            <div id="header-banner">
-                <div class="banner-content single-page text-center">
-                    <div class="banner-info">
-                        <h1>Contact</h1>
-                    </div><!-- / banner-info -->
-                </div><!-- / banner-content -->
-            </div>
-            <!-- / header-banner -->
-        </header>
-        <!-- / header -->
-
-        <!-- content -->
-
-        <div id="page-content" class="container">
-            <div class="row">
-                <div class="col-sm-6 contact-info text-center space-bottom">
-                    <div class="contact-icon">
-                        <i class="lnr lnr-sync"></i>
-                    </div>
-                    <h5>SOCIAL</h5>
-                    <p class="social-contact">LinkedIn: <a href="https://www.linkedin.com/in/rgutierrez1014"><i class="fa fa-linkedin"></i></a></p>
-                    <p class="social-contact">Academia: <a href="https://csuchico.academia.edu/RobertGutierrez">&nbsp;<span style="font-family: 'Halant', Georgia, Cambria, 'Times New Roman', Times, serif;">A</span></a></p>
-                </div><!-- / contact-info -->
-
-                <div class="col-sm-6 contact-info text-center space-bottom">
-                    <div class="contact-icon">
-                        <i class="lnr lnr-envelope"></i>
-                    </div>
-                    <h5>EMAIL</h5>
-                    <p><a href="mailto:robert@ragutierrez.com">robert@ragutierrez.com</a></p>
-                </div><!-- / contact-info -->
-
-            </div><!-- / row -->
-
-            <div class="row contact-area">
-                <div class="col-sm-6 contact-text">
-                    <img src="images/contact-img2.jpg" alt="Robert Gutierrez" title="Robert Gutierrez">
-                </div><!-- / contact-text -->
-
-                <div class="col-sm-6 contact-form-area">
-                    <p>Feel free to contact me about job openings, exciting opportunities, your favorite coffee and chocolate, and why Blade Runner is the best movie ever made.</p>
-                    <br>
-                    <p><a href="mailto:robert@ragutierrez.com" class="btn btn-primary-filled" role="button"><i class="lnr lnr-envelope"></i><span>&nbsp;Email me</span></a>
-                        <a href="https://www.linkedin.com/in/rgutierrez1014" class="btn btn-primary-filled" role="button"><i class="fa fa-linkedin"></i><span>&nbsp;LinkedIn</span></a></p>
-                </div><!-- / col-sm-6 -->
-            </div><!-- / contact-area -->
-
-        </div><!-- / container -->
-
-        <!-- / content -->
-
-        <!-- footer -->
-        <footer>
-            <div class="container">
-                <p class="footer-info">&copy; Copyright 2017 Robert Gutierrez</p>
-            </div><!-- / container -->
-        </footer>
-        <!-- / footer -->
-
-        <!-- javascript -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-
-        <!-- contact-form -->
-        <script src="js/validator.min.js" type="text/javascript"></script>
-        <script src="js/form-scripts.js" type="text/javascript"></script>
-        <!-- / contact-form -->
-
-        <!-- preloader -->
-        <script src="js/preloader.js"></script>
-        <!-- / preloader -->
-
-        <!-- / javascript -->
-    </body>
-
-</html>
+    </div><!-- / container -->
+{% endblock %}

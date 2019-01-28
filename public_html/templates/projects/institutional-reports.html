@@ -74,7 +74,7 @@
             <div id="header-banner">
                 <div class="banner-content single-page text-center">
                     <div class="banner-info">
-                        <h1>Institutional Reports</h1>
+                        <h1>CMP Institutional Reports</h1>
                         <p>Carnegie Foundation</p>
                     </div><!-- / banner-info -->
                 </div><!-- / banner-content -->
@@ -131,7 +131,7 @@
                                 <div class="col-sm-4">
                                     <div class="section-description light">
                                         <h4>Project Info</h4>
-                                        <p>An annual report generated for each college involved in the Pathways program. Pulls data from Google Datastore, our <a href="survey-tool.html">survey tool</a> via API, Salesforce, and Google Bigquery. Graphs generated with d3.</p>
+                                        <p>An annual report generated for each college involved in the Carnegie Math Pathways program. Pulls data from Google Datastore, our <a href="survey-tool.html">survey tool</a> via API, Salesforce, and Google Bigquery. Graphs generated with d3.</p>
                                         <br>
 
                                         <p class="skill-list"><strong>Backend:&nbsp;</strong>
@@ -172,7 +172,7 @@
                                 </div><!-- / col-sm-4 -->
                                 <div class="col-sm-8 project-description">
                                     <h3 class="section-heading">Project Description</h3>
-                                    <p>The Pathways program at Carnegie is a set of developmental math courses, combined with teaching resources for faculty and professional development through improvement science. Faculty teach these developmental math courses, and data is collected on the students who participate in them (grades, survey responses, etc.). In order for faculty members to improve their teaching, we use some of the student data to create reports for them. Faculty use these reports to find out what went well and what they can improve on for their next class. In addition to this, deans and other administrators want to know how their faculty are doing collectively; they want to see an institutional-level report. So every year, we would create these institutional reports for the administrators, usually through some combination of Excel, Word, and Powerpoint. That, combined with the extensive "data wrangling" that needed to happen, meant these reports would take months to make. Eventually we decided we needed an automated solution, so that's where I came in.</p>
+                                    <p>The Carnegie Math Pathways program at Carnegie is a set of developmental math courses, combined with teaching resources for faculty and professional development through improvement science. Faculty teach these developmental math courses, and data is collected on the students who participate in them (grades, survey responses, etc.). In order for faculty members to improve their teaching, we use some of the student data to create reports for them. Faculty use these reports to find out what went well and what they can improve on for their next class. In addition to this, deans and other administrators want to know how their faculty are doing collectively; they want to see an institutional-level report. So every year, we would create these institutional reports for the administrators, usually through some combination of Excel, Word, and Powerpoint. That, combined with the extensive "data wrangling" that needed to happen, meant these reports would take months to make. Eventually we decided we needed an automated solution, so that's where I came in.</p>
                                     <p>First, I analyzed the old reports and interviewed our analytics team on what sorts of data/graphs/diagrams we wanted to present. Once I had that in mind, I designed a layout for the report, which took advantage of Bootstrap tabs to save on vertical space. Then I had to determine the sources of data and how to transform the data into a structure that I could feed into d3 and make graphs. Once the graphs were done, we QA'd the reports and I made various small design updates, like colors, font size, typos, etc.</p>
                                     <p>The first iteration of the new institutional reports went live in July 2015. They've since undergone updates to increase the automation, add and remove graphs, and change wording.</p>
                                     <div class="spacer space-top-2x space-bottom-30"></div>
