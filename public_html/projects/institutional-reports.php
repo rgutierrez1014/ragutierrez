@@ -58,7 +58,10 @@ $context = array_merge($default_context, array(
             'FontAwesome',
             'Photoshop'
         ),
-        'client' => 'Carnegie Foundation',
+        'client' => array(
+            'name' => 'Carnegie Foundation',
+            'url' => 'https://www.carnegiefoundation.org'
+        ),
         'skills' => array(
             'Web Development',
             'Graphic Design'

@@ -4,7 +4,7 @@
     <div class="banner-info">
         <h1>{{ project.title }}</h1>
         {% if project.client %}
-        <p>{{ project.client }}</p>
+        <p>{{ project.client.name }}</p>
         {% endif %}
     </div><!-- / banner-info -->
 {% endblock %}
