@@ -252,6 +252,21 @@ strong {
   padding: 3px 4px;
 }
 
+.carousel-caption {
+    font-size: 26px;
+    font-weight: 600;
+    background: rgba(195, 157, 109, 0.75);
+    background: -moz-linear-gradient(top, rgba(195,157,109,0.1) 0%, rgba(195,157,109,0.85) 75%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(195,157,109,0.1) 0%,rgba(195,157,109,0.85) 75%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(195,157,109,0.1) 0%,rgba(195,157,109,0.85) 75%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26c39d6d', endColorstr='#d9c39d6d',GradientType=0 );
+    right: 0%;
+    bottom: 0px;
+    left: 0%;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
 /* / End Typography */
 .row {
   margin-right: 0;

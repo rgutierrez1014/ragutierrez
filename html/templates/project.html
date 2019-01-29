@@ -27,8 +27,9 @@
                             <div class="carousel-inner" role="listbox">
                                 {% for image in project.images %}
                                 <div class="item{{ loop.first ? ' active' : '' }}">
-                                    <img src="{{ static_dir }}/images/projects/{{ image.name }}" alt="{{ image.description }}" title="Success data">
+                                    <img src="{{ static_dir }}/images/projects/{{ image.name }}" alt="{{ image.description }}" title="{{ image.description }}">
                                     <div class="carousel-caption">
+                                        {{ image.description }}
                                     </div>
                                 </div>
                                 {% endfor %}

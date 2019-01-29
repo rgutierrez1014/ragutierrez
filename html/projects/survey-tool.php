@@ -35,7 +35,27 @@ $context = array_merge($default_context, array(
             array(
                 'name' => 'survey-tool2.jpg',
                 'description' => 'Survey page'
-            )
+            ),
+            array(
+                'name' => 'survey-tool3.jpg',
+                'description' => 'Creating a survey package'
+            ),
+            array(
+                'name' => 'survey-tool4.jpg',
+                'description' => 'Creating a survey from a survey package'
+            ),
+            array(
+                'name' => 'survey-tool5.jpg',
+                'description' => 'Creating an offering from a survey'
+            ),
+            array(
+                'name' => 'survey-tool6.jpg',
+                'description' => 'An example of a survey configuration YAML file'
+            ),
+            array(
+                'name' => 'survey-tool7.jpg',
+                'description' => 'An example of a survey section YAML file'
+            ),
         ),
         'info' => $info,
         'backend' => array(
