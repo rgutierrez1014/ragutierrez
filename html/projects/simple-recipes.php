@@ -49,7 +49,7 @@ $context = array_merge($default_context, array(
             'Creative Writing'
         ),
         'date' => 'December 2015',
-        'demo' => 'http://kennethdesigns.com/images/simple_recipes.pdf',
+        // 'demo' => 'http://kennethdesigns.com/images/simple_recipes.pdf', // no longer active
         'source' => null,
         'description' => array(
             'desc' => $desc,
