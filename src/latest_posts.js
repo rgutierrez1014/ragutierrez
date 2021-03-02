@@ -32,12 +32,12 @@ function Card({ post }) {
                 <img src={post.thumbnail} className="card-img-top post-thumbnail" alt={post.title}></img>
                 <ul className="list-group">
                     <li className="list-group-item">
-                        <h5 className="card-title post-title"><a href={post.link}>{post.title}</a></h5>
+                        <h5 className="card-title post-title"><a href={post.link} target="_blank">{post.title}</a></h5>
                         <p className="card-text post-preview">{shortenText(tagToText(post.content), 80, 250)}</p>
                         <br></br>
                     </li>
                 </ul>
-                <a href={post.link} className="btn btn-primary post-link">Read more</a>
+                <a href={post.link} className="btn btn-primary post-link" target="_blank">Read more</a>
             </div>
         </div>
     )

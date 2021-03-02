@@ -51,7 +51,7 @@ function Card(_ref) {
                         { className: 'card-title post-title' },
                         React.createElement(
                             'a',
-                            { href: post.link },
+                            { href: post.link, target: '_blank' },
                             post.title
                         )
                     ),
@@ -65,7 +65,7 @@ function Card(_ref) {
             ),
             React.createElement(
                 'a',
-                { href: post.link, className: 'btn btn-primary post-link' },
+                { href: post.link, className: 'btn btn-primary post-link', target: '_blank' },
                 'Read more'
             )
         )
