@@ -1,0 +1,14 @@
+{
+  "name": "ryxtech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rgutierrez1014/ryxtech.git",
+  "author": "Robert Gutierrez <gutierrez@carnegiehub.org>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "6",
+    "babel-preset-react-app": "3",
+    "npx": "^10.2.2",
+    "terser": "^5.6.0"
+  }
+}

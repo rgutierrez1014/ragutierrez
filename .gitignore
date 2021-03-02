@@ -13,3 +13,4 @@ Thumbs.db
 # Composer
 composer.phar
 vendor
+node_modules

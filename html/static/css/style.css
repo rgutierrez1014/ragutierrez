@@ -1938,7 +1938,7 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 /* End Headers */
 /* Content */
 /* Portfolio */
-#portfolio {
+#portfolio, #latest-posts {
     padding-top: 75px;
     padding-bottom: 50px;
 }
@@ -4033,3 +4033,64 @@ footer .social a {
 }
 /* End Min Widths */
 /* / End Media Screens */
+
+/* Latest Posts */
+#latest-posts {
+  border-bottom: 1px solid #ebebeb;
+}
+
+#latest-posts .cards-container {
+  margin-top: 40px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+
+#latest-posts .card-col {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#latest-posts .panel {
+  width: 100%;
+  height: 100%;
+}
+
+#latest-posts .panel-body {
+  padding: 0;
+}
+
+#latest-posts .post-title a {
+  color: #111;
+  font-weight: 600;
+}
+
+#latest-posts .post-title a:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+#latest-posts .list-group {
+  margin-bottom: 0;
+}
+
+#latest-posts .list-group-item {
+  border: 0 solid transparent;
+}
+
+#latest-posts .post-preview {
+  margin-bottom: 25px;
+}
+
+#latest-posts .post-link {
+  position: absolute;
+  left: 24px;
+  bottom: 9px;
+}
+
+#latest-posts .more-at-medium {
+  margin-top: 35px;
+}

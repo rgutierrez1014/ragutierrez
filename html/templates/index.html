@@ -9,11 +9,12 @@
 </div><!-- / row -->
 <div class="row">
     <div class="banner-summary col-sm-8 col-sm-offset-2">
-        <p>I'm a creative, collaborative software engineer with strong user empathy. I have over five years of professional experience building web applications and tools to empower colleagues and customers to do their best work.</p>
+        <p>I'm a creative, collaborative software engineer with strong user empathy. I have over six years of professional experience building web applications and tools to empower colleagues and customers to do their best work.</p>
     </div><!-- / banner-summary -->
 </div><!-- / row -->
 {% endblock %}
 {% block content %}
+    {% include "_latest_posts.html" %}
     {% include "_portfolio.html" %}
 {% endblock %}
 {% block tail %}
@@ -36,4 +37,9 @@
     </script>
     <!-- / lightbox -->
     <!-- / portfolio -->
+    <!-- react -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="static/js/latest_posts.min.js"></script>
+    <!-- / react -->
 {% endblock %}
