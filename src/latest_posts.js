@@ -44,12 +44,12 @@ function Card({ post }) {
 }
 
 
-function CardsContainer({posts, active}) {
+function CardsContainer({posts}) {
     if (posts != null) {
-        const trimmed_posts = posts.length > 3 ? posts.slice(4) : posts;
+        const trimmed_posts = posts.length > 3 ? posts.slice(0, 3) : posts;
         const post_cards = trimmed_posts.map((post, index) => {
             return (
-                <div key={post.guid} className="col-xs-6 col-sm-6 col-md-4 card-col">
+                <div key={index} className="col-xs-6 col-sm-6 col-md-4 card-col">
                     <Card post={post} />
                 </div>
             );
@@ -74,32 +74,34 @@ class LatestPosts extends React.Component {
         super(props);
         this.state = {
             requestFailed: false,
-            active: 0,
             rss_url: props.mediumRSSFeedURL
         };
     }
 
     componentDidMount() {
-        const urlForFeedToJson = `https://api.rss2json.com/v1/api.json?rss_url=${this.state.rss_url}`;
-        fetch(urlForFeedToJson)
-            .then(response => {
-                if (!response.ok) {
-                    throw Error("Network request failed")
-                }
-                return response
-            })
-            .then(data => data.json())
-            .then((data) => {
-                const dataItems = data.items;
-                const mediumPosts = dataItems.filter(item => item.categories.length > 0);
-                this.setState({
-                    mediumPosts: mediumPosts
-                });
-            }, (error) => {
-                this.setState({
-                    requestFailed: true,
-                    error
-                });
+        fetch('/config.json').then(data => data.json())
+            .then((config) => {
+                const urlForFeedToJson = `https://api.rss2json.com/v1/api.json?rss_url=${this.state.rss_url}&api_key=${config.rsstojson.api_key}`;
+                fetch(urlForFeedToJson)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw Error("Network request failed")
+                        }
+                        return response
+                    })
+                    .then(data => data.json())
+                    .then((data) => {
+                        const dataItems = data.items;
+                        const mediumPosts = dataItems.filter(item => item.categories.length > 0);
+                        this.setState({
+                            mediumPosts: mediumPosts
+                        });
+                    }, (error) => {
+                        this.setState({
+                            requestFailed: true,
+                            error
+                        });
+                    });
             });
     }
 
@@ -108,7 +110,7 @@ class LatestPosts extends React.Component {
             <div className="container">
                 <h1 className="section-title">Latest Posts</h1>
                 <div className="spacer"></div>
-                <CardsContainer posts={this.state.mediumPosts} active={this.state.active} />
+                <CardsContainer posts={this.state.mediumPosts} />
                 <div className="row more-at-medium">
                     <div className="col-xs-12 text-center">
                         <a href="https://robert-a-gutierrez.medium.com" className="btn btn-primary">View more posts on Medium</a>

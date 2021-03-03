@@ -13,4 +13,9 @@ Thumbs.db
 # Composer
 composer.phar
 vendor
+
+# Node
 node_modules
+
+# Secrets
+/html/config.json

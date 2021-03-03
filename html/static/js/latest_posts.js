@@ -73,15 +73,14 @@ function Card(_ref) {
 }
 
 function CardsContainer(_ref2) {
-    var posts = _ref2.posts,
-        active = _ref2.active;
+    var posts = _ref2.posts;
 
     if (posts != null) {
-        var trimmed_posts = posts.length > 3 ? posts.slice(4) : posts;
+        var trimmed_posts = posts.length > 3 ? posts.slice(0, 3) : posts;
         var post_cards = trimmed_posts.map(function (post, index) {
             return React.createElement(
                 'div',
-                { key: post.guid, className: 'col-xs-6 col-sm-6 col-md-4 card-col' },
+                { key: index, className: 'col-xs-6 col-sm-6 col-md-4 card-col' },
                 React.createElement(Card, { post: post })
             );
         });
@@ -113,7 +112,6 @@ var LatestPosts = function (_React$Component) {
 
         _this.state = {
             requestFailed: false,
-            active: 0,
             rss_url: props.mediumRSSFeedURL
         };
         return _this;
@@ -124,26 +122,30 @@ var LatestPosts = function (_React$Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            var urlForFeedToJson = 'https://api.rss2json.com/v1/api.json?rss_url=' + this.state.rss_url;
-            fetch(urlForFeedToJson).then(function (response) {
-                if (!response.ok) {
-                    throw Error("Network request failed");
-                }
-                return response;
-            }).then(function (data) {
+            fetch('/config.json').then(function (data) {
                 return data.json();
-            }).then(function (data) {
-                var dataItems = data.items;
-                var mediumPosts = dataItems.filter(function (item) {
-                    return item.categories.length > 0;
-                });
-                _this2.setState({
-                    mediumPosts: mediumPosts
-                });
-            }, function (error) {
-                _this2.setState({
-                    requestFailed: true,
-                    error: error
+            }).then(function (config) {
+                var urlForFeedToJson = 'https://api.rss2json.com/v1/api.json?rss_url=' + _this2.state.rss_url + '&api_key=' + config.rsstojson.api_key;
+                fetch(urlForFeedToJson).then(function (response) {
+                    if (!response.ok) {
+                        throw Error("Network request failed");
+                    }
+                    return response;
+                }).then(function (data) {
+                    return data.json();
+                }).then(function (data) {
+                    var dataItems = data.items;
+                    var mediumPosts = dataItems.filter(function (item) {
+                        return item.categories.length > 0;
+                    });
+                    _this2.setState({
+                        mediumPosts: mediumPosts
+                    });
+                }, function (error) {
+                    _this2.setState({
+                        requestFailed: true,
+                        error: error
+                    });
                 });
             });
         }
@@ -159,7 +161,7 @@ var LatestPosts = function (_React$Component) {
                     'Latest Posts'
                 ),
                 React.createElement('div', { className: 'spacer' }),
-                React.createElement(CardsContainer, { posts: this.state.mediumPosts, active: this.state.active }),
+                React.createElement(CardsContainer, { posts: this.state.mediumPosts }),
                 React.createElement(
                     'div',
                     { className: 'row more-at-medium' },
